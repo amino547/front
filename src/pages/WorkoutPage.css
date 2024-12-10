@@ -1,0 +1,79 @@
+.workout-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
+  width: 100%; 
+  background: linear-gradient(135deg, #0c0c1d 0%, #111132 100%);
+  color: white;
+  text-align: center;
+  padding: 2rem; 
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box; 
+  overflow-x: hidden; 
+  overflow-y: auto;
+}
+
+.workout-page h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.navigation button {
+  margin: 0 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #0c0c1d;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navigation button.active,
+.navigation button:hover {
+  background: orange;
+}
+
+.workout-form,
+.workout-list,
+.workout-card {
+  width: 80%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+

@@ -1,0 +1,224 @@
+/* WorkoutPlans.css */
+
+/* Main container */
+.workout-plans-page {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Heading */
+.workout-plans-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #6B73FF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Plans container */
+.plans-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual plan card */
+.plan-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card.active-plan {
+  border: 2px solid #6B73FF;
+}
+
+.plan-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active plan tag */
+.active-tag {
+  background: #6B73FF;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+/* Plan title */
+.plan-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #6B73FF;
+  font-weight: 600;
+}
+
+/* Plan details list */
+.plan-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.plan-details li {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.plan-details li span {
+  font-weight: bold;
+}
+
+/* Exercise list */
+.exercise-list {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Exercise card */
+.exercise-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 60px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.exercise-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  color: #6B73FF;
+  font-weight: 600;
+}
+
+/* Exercise card description */
+.exercise-card p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.exercise-card p strong {
+  font-weight: bold;
+}
+
+/* Go to exercise button */
+.go-to-exercise-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #6B73FF;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.go-to-exercise-btn:hover {
+  background: #5259e6;
+}
+
+/* ===================== Media Queries for Responsiveness ===================== */
+
+/* Tablets and below (max-width 1024px) */
+@media (max-width: 1024px) {
+  .workout-plans-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .plan-card {
+    width: 260px;
+  }
+
+  .exercise-card {
+    width: 200px;
+  }
+
+  .go-to-exercise-btn {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile landscape and tablets (max-width 768px) */
+@media (max-width: 768px) {
+  .workout-plans-page h1 {
+    font-size: 2rem;
+  }
+
+  .plan-card {
+    width: 230px;
+  }
+
+  .exercise-card {
+    width: 180px;
+  }
+
+  .go-to-exercise-btn {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Small mobile devices (max-width 480px) */
+@media (max-width: 480px) {
+  .workout-plans-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .plans-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 15px;
+  }
+
+  .exercise-card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .go-to-exercise-btn {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+  }
+}
+
+
+  

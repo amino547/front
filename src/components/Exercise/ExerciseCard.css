@@ -1,0 +1,100 @@
+/* Exercise Card Container */
+.exercise-card {
+  background: rgba(255, 255, 255, 0.1); /* Slight transparency for the background */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Slightly more padding for balanced content */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 16px;
+  flex: 1;
+  min-width: 220px; /* Set a minimum width to ensure consistency */
+  max-width: 300px; /* Optional: Defines the maximum width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)); /* Subtle gradient */
+}
+
+/* Hover Effect */
+.exercise-card:hover {
+  transform: scale(1.05); /* Slightly larger on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+/* Image Styling */
+.exercise-image {
+  width: 100%;
+  height: auto;
+  max-height: 180px; /* Restrict height for consistent image sizes */
+  border-radius: 8px;
+  margin-bottom: 12px;
+  object-fit: cover; /* Ensures the image is well-fitted */
+}
+
+/* Title Styling */
+.exercise-card h3 {
+  font-size: 1.4rem;
+  color: #6B73FF; /* Blue color for title */
+  font-weight: bold; /* Bold font for emphasis */
+  margin-bottom: 8px;
+  text-transform: uppercase; /* Adds a more dynamic, modern feel */
+  letter-spacing: 1px; /* Slight spacing between letters */
+}
+
+/* Description Styling */
+.exercise-card p {
+  font-size: 1rem;
+  color: #ffffff; /* White color for the description text */
+  line-height: 1.5;
+  margin: 0 8px;
+}
+
+/* Responsive Design: Tablet */
+@media (max-width: 768px) {
+  .exercise-card {
+    min-width: 180px; /* Adjust for smaller screens */
+    max-width: 260px; /* Restrict max width on tablet */
+    padding: 16px; /* Slightly reduced padding */
+  }
+
+  .exercise-image {
+    max-height: 150px; /* Smaller images on tablet */
+  }
+
+  .exercise-card h3 {
+    font-size: 1.3rem; /* Slightly smaller title on tablet */
+  }
+
+  .exercise-card p {
+    font-size: 0.9rem; /* Smaller description text */
+  }
+}
+
+/* Responsive Design: Mobile */
+@media (max-width: 480px) {
+  .exercise-card {
+    min-width: 160px; /* Adjust to fit smaller screens */
+    max-width: 100%; /* Allow card to take full width */
+    margin: 8px auto; /* Center cards with reduced margin */
+    padding: 12px; /* Compact padding for mobile */
+  }
+
+  .exercise-image {
+    max-height: 120px; /* Smaller images for mobile */
+  }
+
+  .exercise-card h3 {
+    font-size: 1.1rem; /* Adjust font size for small screens */
+  }
+
+  .exercise-card p {
+    font-size: 0.85rem; /* Adjust text size for readability */
+  }
+}
+
+
+
+  

@@ -1,0 +1,215 @@
+/* UserInfo.css */
+
+/* General page styling */
+.user-info-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%),
+    url('../assets/images/gy.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Page Heading */
+.user-info-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #6b73ff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  padding: 0 10px;
+}
+
+/* Form Container */
+.form {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+  margin-top: 20px;
+}
+
+/* Form Group (labels and inputs) */
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Dropdown (Select Days) Styling */
+.dropdown {
+  position: relative;
+  margin-top: 15px;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4) 50%, transparent 50%);
+  background-position: right;
+  background-size: 200% 100%;
+  transition: background-position 0.3s;
+}
+
+.dropdown-toggle:hover {
+  background-position: left;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 5px;
+  z-index: 10;
+  animation: typewriter 2s steps(60) 1s forwards;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-item input {
+  margin-right: 10px;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .user-info-page {
+    padding: 15px;
+  }
+
+  .user-info-page h1 {
+    font-size: 2rem;
+  }
+
+  .form {
+    max-width: 90%;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .dropdown-toggle {
+    padding: 0.6rem;
+  }
+
+  .add-exercise-link span {
+    font-size: 1rem;
+  }
+
+  .plus-icon {
+    font-size: 1rem;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Add Exercise Link Styling */
+.add-exercise-link {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  color: #6b73ff;
+  text-decoration: none;
+}
+
+.add-exercise-link span {
+  display: block;
+  margin-right: 5px;
+  font-size: 1.2rem;
+  color: white;
+  background: #6b73ff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.add-exercise-link:hover {
+  text-decoration: underline;
+}
+
+.plus-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #6b73ff;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+

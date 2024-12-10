@@ -1,0 +1,98 @@
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background-color: #1a1a2e;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Default alignment */
+  align-items: center;
+  transition: width 0.3s ease-in-out, justify-content 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Sidebar Open State */
+.sidebar.open {
+  width: 250px;
+  justify-content: center; /* Align contents to the middle when open */
+}
+
+/* Sidebar Toggle Icon */
+.sidebar-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #0f3460;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001; /* Keep above the sidebar */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-icon:hover {
+  background-color: #533483;
+  transform: rotate(90deg);
+}
+
+/* Sidebar Links */
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-20px); /* Slightly out of view */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.sidebar.open .sidebar-links {
+  opacity: 1; /* Visible when open */
+  transform: translateY(0); /* Bring into view */
+}
+
+.sidebar-links li {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #eaeaea;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease-in-out, padding-left 0.3s ease;
+}
+
+.sidebar-links li:hover {
+  background-color: #0f3460;
+  padding-left: 25px;
+  border-radius: 0 15px 15px 0;
+}
+
+.sidebar-links li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-links li a:hover {
+  color: #ffffff;
+}
+
+

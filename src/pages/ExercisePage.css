@@ -1,0 +1,117 @@
+
+.exercise-page2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 200vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0c0c1d 0%, #111132 100%);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.exercise-page2 h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+  text-transform: uppercase; /* Adds emphasis on page title */
+  letter-spacing: 2px; /* Slight letter spacing for readability */
+}
+
+/* Navigation Buttons */
+.navigation2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%; /* Ensure buttons don't overflow */
+}
+
+.navigation2 button {
+  margin: 0 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #0c0c1d ;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+.navigation2 button.active,
+.navigation2 button:hover {
+  background: orange;
+  transform: translateY(-2px); /* Adds subtle hover effect */
+}
+
+/* Exercise Cards Container */
+.exercise-cards2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Keyframe Animation for Title */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design: Tablet */
+@media (max-width: 768px) {
+  .exercise-page2 {
+    padding: 16px; /* Adjust padding for smaller screens */
+  }
+
+  .exercise-page2 h1 {
+    font-size: 2.5rem; /* Slightly smaller header on tablet */
+  }
+
+  .navigation2 button {
+    padding: 0.5rem 1rem; /* Adjust button size on smaller screens */
+    font-size: 1rem;
+  }
+
+  .exercise-cards2 {
+    gap: 12px; /* Reduce the gap between cards for better fit */
+    padding: 12px;
+  }
+}
+
+/* Responsive Design: Mobile */
+@media (max-width: 480px) {
+  .exercise-page2 {
+    padding: 12px; /* More compact padding for mobile */
+  }
+
+  .exercise-page2 h1 {
+    font-size: 2rem; /* Adjust header size for mobile */
+  }
+
+  .navigation2 button {
+    padding: 0.4rem 0.8rem; /* Further reduce button size on mobile */
+    font-size: 0.9rem;
+  }
+
+  .exercise-cards2 {
+    gap: 8px; 
+    padding: 8px;
+  }
+}

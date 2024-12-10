@@ -1,0 +1,38 @@
+/* Exercise List Container */
+.exercise-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap neatly on smaller screens */
+  justify-content: center; /* Center-align the items */
+  gap: 2rem; /* Slightly larger gap for visual clarity */
+  padding: 2rem; /* Balanced padding for all screen sizes */
+  background: linear-gradient(135deg, #0c0c1d 0%, #111132 100%); /* Gradient background */
+  color: white; /* White text for better contrast */
+  box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+  width: 100%; /* Full width of the container */
+  min-height: 100vh; /* Ensure the list takes up the full height */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport */
+  border-radius: 12px; /* Rounded corners for a softer look */
+  margin: 0 auto; /* Center the container within the page */
+}
+
+/* Responsive Design: Tablet */
+@media (max-width: 768px) {
+  .exercise-list {
+    padding: 1.5rem; /* Slightly reduced padding for tablet screens */
+    gap: 1.5rem; /* Reduce spacing between the items for tablet devices */
+    justify-content: flex-start; /* Align items to the start of the container */
+  }
+}
+
+/* Responsive Design: Mobile */
+@media (max-width: 480px) {
+  .exercise-list {
+    padding: 1rem; /* Compact padding for mobile screens */
+    gap: 1rem; /* Further reduced gap for mobile screens */
+    justify-content: center; /* Ensure content remains centered */
+    flex-direction: column; 
+  }
+}
+
+
+  

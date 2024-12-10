@@ -1,0 +1,145 @@
+
+.signin-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 1rem;
+  background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%), 
+              url('../assets/images/gym.jpg') center/cover no-repeat;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+
+.signin-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease-out;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.signin-page form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 1.5s ease-out;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: #0c0c1d;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  background: #f0f0f0;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background: #0c0c1d;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: orange;
+  transform: scale(1.05);
+}
+
+
+.signup-link {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+  color: #ffd700;
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .signin-page {
+    padding: 0 0.5rem;
+  }
+
+  .signin-page h1 {
+    font-size: 2rem;
+  }
+
+  .signin-page form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signin-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .signin-page form {
+    padding: 1rem;
+  }
+}
+
+  

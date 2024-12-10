@@ -1,0 +1,185 @@
+/* General Page Layout */
+.user-page1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top for scrolling */
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #0c0c1d 0%, #111132 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Header */
+.user-page1 h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeInDown 1s ease-out;
+}
+
+/* Navigation */
+.navigation1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  gap: 1rem; /* Add spacing between buttons */
+  margin-bottom: 2rem;
+}
+
+.navigation1 button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #1a1a3b;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.navigation1 button.active,
+.navigation1 button:hover {
+  background: #ff9933; /* Bright orange for emphasis */
+  transform: scale(1.05);
+}
+
+/* Profile, Stats, and Settings Sections */
+.profile-details,
+.stats-details,
+.settings-details {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out;
+  text-align: left; /* Align text for better readability */
+  width: 90%;
+  max-width: 800px;
+}
+
+.profile-details h2,
+.stats-details h2,
+.settings-details h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #6b73ff;
+}
+
+.profile-details p,
+.stats-details p,
+.settings-details p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #eaeaea;
+  line-height: 1.5;
+}
+
+/* Settings Input and Buttons */
+.settings-details input,
+.settings-details select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: #0c0c1d;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.settings-details input:focus,
+.settings-details select:focus {
+  outline: none;
+  background: #f7f7f7;
+  box-shadow: 0 0 4px #6b73ff;
+}
+
+.settings-details button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background: gray;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+.settings-details button:hover {
+  background: orange;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-page1 h1 {
+    font-size: 2rem;
+  }
+
+  .navigation1 button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .profile-details,
+  .stats-details,
+  .settings-details {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .profile-details p,
+  .stats-details p,
+  .settings-details p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation1 button {
+    margin-bottom: 0.5rem;
+  }
+}
+
+

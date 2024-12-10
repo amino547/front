@@ -1,0 +1,179 @@
+.setting-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%), 
+  url('../assets/images/g.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;  
+  max-width: 1000px; 
+  margin: 0 auto; 
+  align-items: center;
+  justify-content: center;
+}
+
+/* Titles outside of cards */
+.setting-title {
+  margin-bottom: 2rem; /* Increased space from card */
+  font-size: 2rem;
+  color: gray;
+  text-transform: uppercase;
+  border-bottom: 2px solid orange; /* Divider line under titles */
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Card Style */
+.card {
+  background: #373865;
+  border-radius: 30px;
+  padding: 50px 100px;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card Heading */
+.card h3 {
+  font-size: 2rem;
+  color: darkgray;
+  margin-bottom: 2rem;
+}
+
+/* Setting Item */
+.card .setting-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.card .setting-label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  display: flex;
+}
+
+.card .setting-value {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #BBBBFF;
+  padding: 10px 15px;
+  text-transform: lowercase;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  background: #0c0c1d;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background: orange;
+}
+
+.restore-btn {
+  margin-right: 1rem;
+}
+
+.logout-btn {
+  margin-left: 1rem;
+}
+
+/* Account Details Section */
+.account-details {
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+}
+
+/* Divider between sections */
+.account-details, .setting-item {
+  border-bottom: 1px solid #ddd;  
+  padding-bottom: 15px; 
+}
+
+/* Tablet Media Query */
+@media (max-width: 768px) {
+  .setting-section {
+    padding: 1.5rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card h3 {
+    font-size: 1.6rem;
+  }
+
+  .setting-item {
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Media Query */
+@media (max-width: 480px) {
+  .setting-section {
+    padding: 1rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+}
+

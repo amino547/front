@@ -1,0 +1,46 @@
+.navbar {
+  width: 60px;
+  height: 100vh; /* جعل الشريط يغطي الشاشة عمودياً */
+  background-color: black; /* لون الخلفية بنفسجي غامق */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.navbar-center {
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.animated-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  writing-mode: vertical-rl; /* يجعل النص عمودياً */
+  transform: rotate(180deg); /* يقلب النص للقراءة بسهولة */
+  animation: fadeInMove 3s ease-in-out infinite;
+}
+
+@keyframes fadeInMove {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(-5px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

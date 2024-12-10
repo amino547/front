@@ -1,0 +1,47 @@
+/* App.css */
+
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: black;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 60px;
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+  overflow-y: auto; /* Ensure content is scrollable if it overflows */
+}
+
+.main-content.shifted {
+  margin-left: 250px;
+}
+
+/* Additional styles for better layout and appearance */
+.navbar, .sidebar, .bottom-nav {
+  z-index: 1000; 
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+  

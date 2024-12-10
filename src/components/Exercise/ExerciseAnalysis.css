@@ -1,0 +1,68 @@
+/* General Container for Exercise Analysis */
+.exercise-analysis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0c0c1d 0%, #111132 100%);
+    color: white;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Limiting the width for better readability */
+  }
+  
+  /* Heading Style */
+  .exercise-analysis h2 {
+    font-size: 2.5rem; /* Increased for visibility */
+    margin-bottom: 15px;
+    color: #6B73FF; /* Consistent branding color */
+    font-weight: 600;
+    text-transform: uppercase; /* Adds a professional touch */
+  }
+  
+  /* Paragraph Style */
+  .exercise-analysis p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #dcdcdc;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .exercise-analysis {
+      padding: 20px; /* Slightly reduced padding */
+      margin: 15px;
+    }
+  
+    .exercise-analysis h2 {
+      font-size: 2rem; /* Slightly smaller for mobile screens */
+    }
+  
+    .exercise-analysis p {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .exercise-analysis {
+      padding: 15px; /* More compact padding */
+      margin: 10px;
+    }
+  
+    .exercise-analysis h2 {
+      font-size: 1.8rem; /* Even smaller font size for very small screens */
+    }
+  
+    .exercise-analysis p {
+      font-size: 0.9rem; /* Compact paragraph size */
+    }
+  }
+  

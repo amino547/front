@@ -97,5 +97,3 @@ const ExercisePath = () => {
 };
 
 export default ExercisePath;
-
-

@@ -1,55 +1,61 @@
+/* Main Section - Overall Layout */
 .setting-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Start from the top, instead of center */
   background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%), 
-  url('../assets/images/g.jpg') center/cover no-repeat;
+    url('../assets/images/g.jpg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   font-family: 'Arial', sans-serif;
+  min-height: 100vh; /* Ensures full page height */
+  background-size: cover;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  overflow-y: auto; /* Ensure content scrolls vertically */
 }
 
+/* Card Container */
 .card-container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 100%;  
-  max-width: 1000px; 
-  margin: 0 auto; 
-  align-items: center;
-  justify-content: center;
-}
-
-/* Titles outside of cards */
-.setting-title {
-  margin-bottom: 2rem; /* Increased space from card */
-  font-size: 2rem;
-  color: gray;
-  text-transform: uppercase;
-  border-bottom: 2px solid orange; /* Divider line under titles */
-  padding-bottom: 10px;
   width: 100%;
-  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+  padding: 2rem 0; /* Add padding to separate cards from edges */
+  z-index: 2;
+  margin-top: 2rem; /* Adds spacing from the top */
+  overflow-y: auto; /* Allows vertical scrolling of cards */
 }
 
 /* Card Style */
 .card {
-  background: #373865;
-  border-radius: 30px;
-  padding: 50px 100px;  
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(15px);
+  width: 100%;
+  max-width: 600px;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
+  margin-top: 2rem; /* Adds space between cards */
 }
 
 /* Card Heading */
 .card h3 {
-  font-size: 2rem;
-  color: darkgray;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #f4f4f4;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /* Setting Item */
@@ -57,68 +63,85 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Label and Value */
+.setting-label {
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+.setting-value {
+  font-size: 16px;
+  color: #BBBBFF;
+  width: 55%;
+}
+
+/* Input Fields */
+input[type="text"], input[type="email"], input[type="number"], select {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
   box-sizing: border-box;
 }
 
-.card .setting-label {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #ffffff;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  display: flex;
-}
-
-.card .setting-value {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #BBBBFF;
-  padding: 10px 15px;
-  text-transform: lowercase;
-}
-
+/* Buttons */
 .btn {
   padding: 12px 24px;
   border: none;
   border-radius: 5px;
-  background: #0c0c1d;
+  background: rgba(12, 12, 29, 0.7);
   color: white;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
   margin-top: 1rem;
+  width: fit-content;
+  align-self: center;
 }
 
 .btn:hover {
-  background: orange;
+  background: rgba(255, 165, 0, 0.7);
 }
 
-.restore-btn {
-  margin-right: 1rem;
-}
-
-.logout-btn {
-  margin-left: 1rem;
-}
-
-/* Account Details Section */
+/* Account Details */
 .account-details {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   width: 100%;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* Divider between sections */
 .account-details, .setting-item {
-  border-bottom: 1px solid #ddd;  
-  padding-bottom: 15px; 
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
-/* Tablet Media Query */
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+/* Media Query: Tablet View */
 @media (max-width: 768px) {
   .setting-section {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .card-container {
@@ -127,7 +150,7 @@
   }
 
   .card {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .card h3 {
@@ -136,7 +159,7 @@
 
   .setting-item {
     margin-bottom: 1rem;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
 
   .btn {
@@ -145,7 +168,7 @@
   }
 }
 
-/* Mobile Media Query */
+/* Media Query: Mobile View */
 @media (max-width: 480px) {
   .setting-section {
     padding: 1rem;
@@ -153,6 +176,7 @@
 
   .card-container {
     flex-direction: column;
+    width: 100%;
   }
 
   .card {
@@ -169,11 +193,21 @@
     margin-bottom: 0.8rem;
   }
 
+  .setting-label {
+    font-size: 14px;
+    width: 100%;
+  }
+
   .btn {
     width: 100%;
     padding: 10px;
     font-size: 0.9rem;
     margin-top: 1.5rem;
+  }
+
+  .account-details {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 

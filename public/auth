@@ -1,0 +1,222 @@
+import { createContext, useReducer, useEffect } from 'react';
+
+const AuthContext = createContext();
+
+const userReducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_USER_PROFILE':
+      localStorage.setItem('user', JSON.stringify(action.payload));
+      return { ...state, user: action.payload };
+    case 'UPDATE_USER_PROFILE':
+      const updatedUser = { ...state.user, ...action.payload };
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      return { ...state, user: updatedUser };
+    case 'ADD_WORKOUT_PLAN':
+      return {
+        ...state,
+        workoutPlans: [...state.workoutPlans, action.payload],
+      };
+    case 'ADD_EXERCISE':
+      return {
+        ...state,
+        exercises: [...state.exercises, action.payload],
+      };
+    case 'LOGOUT':
+      localStorage.removeItem('user');
+      return {
+        user: null,
+        workoutPlans: [],
+        exercises: [],
+      };
+    default:
+      return state;
+  }
+};
+
+const AuthProvider = ({ children }) => {
+  const initialState = {
+    user: JSON.parse(localStorage.getItem('user')) || null,
+    workoutPlans: [],
+    exercises: [],
+  };
+
+  const [state, dispatch] = useReducer(userReducer, initialState);
+
+  useEffect(() => {
+    if (state.user) {
+      localStorage.setItem('user', JSON.stringify(state.user));
+    }
+  }, [state.user]);
+
+  return (
+    <AuthContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export { AuthContext, AuthProvider };
+
+
+
+
+
+
+
+const Setting = () => {
+  const { state, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    gender: '',
+    age: '',
+    height: '',
+    weight: '',
+    unitSystem: 'metric',
+    language: 'en',
+    startOfWeek: 'monday',
+    email: '',
+    password: '',
+  });
+
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  // Check if user is authenticated
+  useEffect(() => {
+    console.log('User state:', state.user); // Debugging log
+    if (!state.user) {
+      setError('User not authenticated. Please log in again.');
+      setLoading(false);
+      navigate('/settings'); // Redirect to login page if user is not authenticated
+    } else {
+      const userId = state.user._id || null;
+      if (!userId) {
+        setError('User not authenticated. Please log in again.');
+        setLoading(false);
+        navigate('/signin'); // Redirect to login page if userId is not found
+      } else {
+        fetchSettings(userId); // Proceed to fetch settings if user is authenticated
+      }
+    }
+  }, [state.user, navigate]);
+
+  // Fetch user settings from backend
+  const fetchSettings = async (userId) => {
+    if (!userId) {
+      setError('User not authenticated. Please log in again.');
+      setLoading(false);
+      return;
+    }
+
+    // Proceed with the API call
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setError('Authentication error. Please log in again.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:5000/user/settings/${userId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.msg || 'Failed to fetch settings');
+      }
+
+      const data = await response.json();
+      setFormData({
+        firstName: data.firstName || '',
+        gender: data.gender || '',
+        age: data.age || '',
+        height: data.height || '',
+        weight: data.weight || '',
+        unitSystem: data.unitSystem || 'metric',
+        language: data.language || 'en',
+        startOfWeek: data.startOfWeek || 'monday',
+        email: data.email || '',
+        password: '', // Do not fetch or display hashed password
+      });
+    } catch (err) {
+      console.error('Error fetching settings:', err.message);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Handle form input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle saving updated settings to the backend
+  const handleSaveSettings = async (e) => {
+    e.preventDefault();
+
+    // Basic form validation
+    if (!formData.firstName || !formData.gender || !formData.age || !formData.height || !formData.weight || !formData.email) {
+      setError('Please fill in all required fields.');
+      return;
+    }
+
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setError('Authentication error. Please log in again.');
+      return;
+    }
+
+    // Remove the password field if it hasn't been updated
+    const payload = { ...formData };
+    if (!payload.password) {
+      delete payload.password; // Avoid sending empty password if not updated
+    }
+
+    setSaving(true); // Set saving state to true
+
+    try {
+      const response = await fetch(`http://localhost:5000/user/settings/${state.user._id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.msg || 'Failed to update settings');
+      }
+
+      const data = await response.json();
+      dispatch({ type: 'UPDATE_USER', payload: data.user });
+      localStorage.setItem('user', JSON.stringify(data.user));
+      setError(null); // Clear any previous errors
+      alert('Settings updated successfully');
+    } catch (err) {
+      console.log('Error updating settings:', err.message);
+      setError(err.message);
+    } finally {
+      setSaving(false); // Set saving state to false
+    }
+  };
+
+  // Handle logout
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/signin');
+  };
+
+  if (loading) return <div>Loading...</div>;

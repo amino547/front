@@ -32,7 +32,7 @@ const SignIn = () => {
         localStorage.setItem('userId', data.userId);
 
         
-        navigate('/dashboard');
+        navigate('/');
       } else {
         setError(data.error); 
       }
@@ -74,6 +74,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-
-
-

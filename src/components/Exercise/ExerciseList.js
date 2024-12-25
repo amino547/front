@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import ExerciseCard from './ExerciseCard';
 import ExerciseAnalysis from './ExerciseAnalysis';
 import './ExerciseList.css';
@@ -25,7 +25,25 @@ const ExerciseList = () => {
   );
 };
 
+export default ExerciseList*/
+
+import React from 'react';
+
+import ExerciseAnalysis from './ExerciseAnalysis';
+import './ExerciseList.css';
+
+const ExerciseList = ({ exercises }) => {
+  return (
+    <div className="exercise-list">
+      <ExerciseAnalysis exercises={exercises} />
+
+    </div>
+  );
+};
+
 export default ExerciseList;
+
+
 
 
 

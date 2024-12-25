@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import './WorkoutFrom.css';
 
 const WorkoutForm = ({ onSubmit }) => {
@@ -63,7 +63,75 @@ const WorkoutForm = ({ onSubmit }) => {
   );
 };
 
+export default WorkoutForm;*/
+
+
+// WorkoutForm.js
+// WorkoutForm.js
+import React, { useState } from 'react';
+
+const WorkoutForm = ({ onSubmit }) => {
+  const [name, setName] = useState('');
+  const [difficulty, setDifficulty] = useState('');
+  const [type, setType] = useState('');
+  const [goal, setGoal] = useState('');
+  const [schedule, setSchedule] = useState('');
+  const [imageUrl, setImageUrl] = useState(''); // Add imageUrl state
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newWorkout = {
+      name,
+      difficulty,
+      type,
+      goal,
+      schedule: schedule.split(',').map(day => day.trim()),
+      imageUrl, // Include imageUrl in the newWorkout object
+    };
+    onSubmit(newWorkout);
+    setName('');
+    setDifficulty('');
+    setType('');
+    setGoal('');
+    setSchedule('');
+    setImageUrl(''); // Reset imageUrl state
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="workout-form">
+      <div className="form-group">
+        <label>Name:</label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label>Difficulty:</label>
+        <input type="text" value={difficulty} onChange={(e) => setDifficulty(e.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label>Type:</label>
+        <input type="text" value={type} onChange={(e) => setType(e.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label>Goal:</label>
+        <input type="text" value={goal} onChange={(e) => setGoal(e.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label>Schedule (comma-separated):</label>
+        <input type="text" value={schedule} onChange={(e) => setSchedule(e.target.value)} required />
+      </div>
+      <div className="form-group">
+        <label>Image URL:</label>
+        <input type="url" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
+      </div>
+      <button type="submit">Add Workout</button>
+    </form>
+  );
+};
+
 export default WorkoutForm;
+
+
+
 
 
 

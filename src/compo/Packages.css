@@ -1,0 +1,241 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    height: 100%;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+/* Membres Dashboard Section */
+.membres-dashboard {
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+/* Home Section (Background and Main Layout) */
+.home3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%),
+      url('../assets/images/b.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-family: 'Arial', sans-serif;
+    height: 100vh; /* Ensure the home section fills the viewport */
+    overflow: hidden; /* Hide overflow to keep layout neat */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+/* Add a semi-transparent overlay to make text stand out */
+.home3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    z-index: 0;
+  }
+  
+.home3 h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    z-index: 1; /* Ensure text is above the overlay */
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+  
+.home3 p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    z-index: 1;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+  
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: flex-end;  /* Align content to the right */
+    align-items: flex-start;    /* Align items to the top */
+    margin-bottom: 20px;
+    width: 96%;
+    position: absolute; /* Position the header absolutely to the top of the page */
+    top: 0; /* Place the header at the top */
+    left: 0; /* Ensure it's aligned to the left */
+    padding: 20px; /* Optional: Add padding to space it out */
+  }
+  
+.header-left {
+    flex: 1;
+  }
+  
+.header-left h1 {
+    margin: 0;
+  }
+  
+.header-right {
+    display: flex;
+    justify-content: flex-end; /* Align header-right to the right */
+    align-items: flex-start; /* Align the items to the top of the header */
+  }
+  
+.logout-button {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+.logout-button:hover {
+    background-color: #0056b3;
+  }
+  
+/* Welcome Section (Left Side) */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Position logo-container to the top-left */
+  }
+  
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+.welcome-text5 {
+    text-align: left; /* Align text to the left */
+  }
+  
+.welcome-text5 h1 {
+    font-size: 2rem;
+    margin: 0;
+    z-index: 2;
+    color: #8A2BE2;
+  }
+  
+.welcome-text5 p {
+    font-size: 1rem;
+    margin: 0;
+    z-index: 2;
+  }
+  
+/* Action Buttons - Enlarged and Rectangular Cards */
+.action-buttons {
+    display: flex;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: center; /* Center the cards vertically */
+    gap: 30px;
+    margin-top: 100px; /* Push action buttons down a bit */
+    z-index: 2;
+    width: 100%;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.action-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    width: 22%; /* Enlarge cards and place next to each other */
+    min-width: 250px; /* Ensure cards are not too small */
+    height: 200px; /* Make the cards rectangular */
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+.action-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  }
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.add-package .icon {
+    color: #007BFF;
+}
+
+.view-package .icon {
+    color: #FF6347;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .home {
+        padding: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+        margin-top: 100px; /* Adjust for mobile */
+    }
+
+    .action-button {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .logo-container, .welcome-text {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

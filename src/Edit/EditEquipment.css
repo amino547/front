@@ -1,0 +1,122 @@
+/* General page styling */
+.edit-equipmentN {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%),
+      url('../assets/images/m.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Form styling */
+  form .N {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.6s ease-in-out;
+    margin-top: 20px;
+  }
+  
+  /* Form Group (labels and inputs) */
+  .form-groupN {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  .form-groupN label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .form-groupN input,
+  .form-groupN select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .form-groupN input:focus,
+  .form-groupN select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .form-groupN input,
+.form-groupN textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-groupN input:focus,
+.form-groupN textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+  
+  /* Submit Button */
+  .submit-buttonN {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+  }
+  
+  .submit-buttonN:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .edit-equipment {
+      padding: 15px;
+    }
+  
+    form {
+      max-width: 90%;
+    }
+  
+    .form-group label {
+      font-size: 1rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  
+    button[type="submit"] {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  }

@@ -1,0 +1,424 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    height: 100%;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Admin Dashboard Section */
+.admin-dashboardC {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Home Section (Background and Main Layout) */
+.addB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%),
+      url('../assets/images/gy.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    height: auto;
+    overflow: visible; /* Allow content to overflow naturally */
+}
+
+.addB h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.2s ease-in-out;
+}
+
+.addB p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Header Styles */
+.header1 {
+    display: flex;
+    justify-content: space-between; /* Keeps logout on the left and header-left in the middle */
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.header-left3 {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;    /* Centers content vertically */
+    flex-grow: 1; /* Allows this section to take up remaining space */
+}
+
+.header-left3 h1 {
+    margin: 0; /* Removes default margin */
+    color: #FFD700;
+}
+
+.logout-button1 {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button1:hover {
+    background-color: #0056b3;
+}
+
+/* Welcome Section */
+.welcome-section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.welcome-text1 h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: rgb(220, 214, 214);
+}
+
+.welcome-text1 p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Stats Cards */
+.stats-cards3 {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.card3 {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    width: 20%;
+    color: white;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.card-icon1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: red;
+}
+
+.card-icon2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #4682B4;
+}
+
+.card-icon3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #FFD700;
+}
+
+.card-icon4 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #8A2BE2;
+}
+
+.card3 h3 {
+    margin: 0 0 10px;
+    color: rgb(220, 214, 214);
+}
+
+.card3 p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Reports */
+.reports {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.report-section {
+    width: 48%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.report-header {
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 20px;
+}
+
+.report-header h2 {
+    text-align: right;
+    position: relative;
+    top: -20px;
+    color: rgb(220, 214, 214);
+}
+
+.report-header p {
+    text-align: left;
+}
+
+
+.report-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #FFD700;
+   
+}
+
+.report-header h2 {
+    margin: 0;
+}
+
+.report-header p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+}
+
+.report-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 1.5em;
+    color: #FFD700;
+}
+
+/* Bar Chart */
+.bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.bar {
+    width: 20px;
+    margin: 0 5px;
+}
+
+.bar.blue {
+    background-color: #007BFF;
+}
+
+.bar.orange {
+    background-color: #FFA500;
+}
+
+/* Pie Chart */
+/* Card Container */
+/* Card Container */
+.pie-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+}
+
+/* Donut Pie-Chart */
+.pie-chart {
+    width: 300px;
+    height: 300px;
+    background: conic-gradient(
+        #FF6347 0% 25%,
+        #4682B4 25% 50%,
+        #FFD700 50% 75%,
+        #8A2BE2 75% 100%
+    );
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    position: relative;
+}
+
+
+/* Hole with Matching Background */
+.pie-chart::after {
+    content: '';
+    width: 180px; /* Enlarged size for the hole */
+    height: 180px;
+    background-color: black; /* Same as card background */
+    border-radius: 50%; /* Keeps it circular */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the hole */
+}
+
+
+
+.legend {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+.legend-item::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.legend-item.member::before { background-color: #FF6347; }
+.legend-item.equipment::before { background-color: #4682B4; }
+.legend-item.trainer::before { background-color: #FFD700; }
+.legend-item.package::before { background-color: #8A2BE2; }
+
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .stats-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .reports {
+        flex-direction: column;
+    }
+
+    .report-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .pie-chart {
+        width: 150px;
+        height: 150px;
+    }
+
+    .legend {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logout-button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .home h1 {
+        font-size: 2.5rem;
+    }
+
+    .home p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        padding: 10px;
+    }
+
+    .header-left h1 {
+        font-size: 1.5rem;
+    }
+
+    .logout-button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .stats-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}

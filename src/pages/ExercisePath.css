@@ -31,7 +31,7 @@
 }
 
 /* Form container */
-form {
+form .E {
   width: 100%;
   max-width: 600px;
   background: rgba(255, 255, 255, 0.1);

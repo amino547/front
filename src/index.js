@@ -17,7 +17,9 @@ if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <AuthProvider>
+      
         <App />
+  
       </AuthProvider>
     </React.StrictMode>
   );

@@ -1,0 +1,201 @@
+/* General page styling */
+.containerC  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%),
+      url('../assets/images/462582804_1117284816579003_8670293255902015948_n.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Header styling */
+  .head {
+    display: flex;
+    justify-content: flex-end;  /* Align content to the right */
+    align-items: flex-start;    /* Align items to the top */
+    margin-bottom: 20px;
+    width: 96%;
+    position: absolute; /* Position the header absolutely to the top of the page */
+    top: 0; /* Place the header at the top */
+    left: 0; /* Ensure it's aligned to the left */
+    padding: 20px; /* Optional: Add padding to space it out */
+  }
+  
+  .header-left {
+    flex: 1;
+  }
+  
+  .header-left h1 {
+    margin: 0;
+  }
+  
+  .header-r {
+    display: flex;
+    justify-content: flex-end; /* Align header-right to the right */
+    align-items: flex-start; /* Align the items to the top of the header */
+  }
+  
+  .logout-butt {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .logout-butt:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Welcome Section (Left Side) */
+  .welcome-s {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Position logo-container to the top-left */
+  }
+  
+  .logo-c {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .log {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .welcome-t {
+    text-align: left; /* Align text to the left */
+  }
+  
+  .welcome-t h1 {
+    font-size: 2rem;
+    margin: 0;
+    z-index: 2;
+    color: red;
+  }
+  
+  .welcome-t p {
+    font-size: 1rem;
+    margin: 0;
+    z-index: 2;
+  }
+  
+  /* Member list styling */
+  .member-list {
+    width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+  
+  .member-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  th {
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  td {
+    color: white;
+    font-size: 1rem;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Button styling */
+  .edit-button, .delete-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover, .delete-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .member-list {
+      padding: 15px;
+    }
+  
+    .member-list h2 {
+      font-size: 1.3rem;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+  
+    th, td {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .edit-button, .delete-button {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  

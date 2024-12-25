@@ -1,0 +1,229 @@
+/* General page styling */
+.admin-dashboardD {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(12, 12, 29, 0.9) 0%, rgba(17, 17, 50, 0.9) 100%),
+      url('../assets/images/b.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Header styling */
+  .headerD {
+    display: flex;
+    justify-content: flex-end;  /* Align content to the right */
+    align-items: flex-start;    /* Align items to the top */
+    margin-bottom: 20px;
+    width: 96%;
+    position: absolute; /* Position the header absolutely to the top of the page */
+    top: 0; /* Place the header at the top */
+    left: 0; /* Ensure it's aligned to the left */
+    padding: 20px; /* Optional: Add padding to space it out */
+  }
+  
+.header-left {
+    flex: 1;
+  }
+  
+.header-left h1 {
+    margin: 0;
+  }
+  
+.header-rightD {
+    display: flex;
+    justify-content: flex-end; /* Align header-right to the right */
+    align-items: flex-start; /* Align the items to the top of the header */
+  }
+  
+.logout-buttonD {
+    background-color: #4682B4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+.logout-buttonD:hover {
+    background-color: #0056b3;
+  }
+  
+/* Welcome Section (Left Side) */
+.welcome-sectionD {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Position logo-container to the top-left */
+  }
+  
+.logo-containerD {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+.logoD {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+.welcome-textD {
+    text-align: left; /* Align text to the left */
+  }
+  
+.welcome-textD h1 {
+    font-size: 2rem;
+    margin: 0;
+    z-index: 2;
+    color: #8A2BE2;
+  }
+  
+.welcome-textD p {
+    font-size: 1rem;
+    margin: 0;
+    z-index: 2;
+  }
+  
+  /* Add package section styling */
+  .add-package h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: rgb(220, 214, 214)ff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    padding: 0 10px;
+  }
+  
+  .add-package h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Form styling */
+  form.D {
+    width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.6s ease-in-out;
+  margin-top: 20px;
+  }
+  
+  /* Form group (labels and inputs) */
+  .form-groupD {
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+  
+  .form-groupD label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  .form-groupD input,
+.form-groupD select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.form-groupD input:focus,
+.form-groupD select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+}
+  
+  .form-groupD input,
+  .form-groupD textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .form-groupD input:focus,
+  .form-groupD textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Submit button */
+  button[type="submitD"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4682B4;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submitD"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    .admin-dashboardD {
+      padding: 15px;
+    }
+  
+    .header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .add-package {
+      padding: 15px;
+    }
+  
+    .add-package h2 {
+      font-size: 1.3rem;
+    }
+  
+    form.D {
+      max-width: 90%;
+    }
+  
+    .form-group label {
+      font-size: 1rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  
+    button[type="submit"] {
+      font-size: 0.9rem;
+      padding: 0.6rem;
+    }
+  }

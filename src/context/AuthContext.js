@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+/*import React, { createContext, useReducer } from 'react';
 
 
 const AuthContext = createContext();
@@ -41,7 +41,95 @@ const AuthProvider = ({ children }) => {
 };
 
 
-export { AuthContext, AuthProvider };
+export { AuthContext, AuthProvider };*/
+
+
+
+/*import React, { createContext, useReducer, useEffect, useContext } from 'react';
+
+const AuthContext = createContext();
+
+const authReducer = (state, action) => {
+  switch (action.type) {
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isAuthenticated: true,
+        token: action.payload.token,
+        userId: action.payload.userId,
+      };
+    case 'LOGOUT':
+      return {
+        ...state,
+        isAuthenticated: false,
+        token: null,
+        userId: null,
+      };
+    case 'UPDATE_USER':
+      return {
+        ...state,
+        user: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const AuthProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(authReducer, {
+    isAuthenticated: false,
+    token: null,
+    userId: null,
+    user: null,
+  });
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    const user = JSON.stringify(localStorage.getItem('user'));
+    if (token && userId) {
+      dispatch({ type: 'LOGIN_SUCCESS', payload: { token, userId } });
+      if (user) {
+        dispatch({ type: 'UPDATE_USER', payload: user });
+      }
+    }
+  }, []);
+
+  const login = (token, userId) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
+    dispatch({ type: 'LOGIN_SUCCESS', payload: { token, userId } });
+  };
+
+  const signup = (token, userId) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
+    dispatch({ type: 'LOGIN_SUCCESS', payload: { token, userId } });
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('user');
+    dispatch({ type: 'LOGOUT' });
+  };
+
+  return (
+    <AuthContext.Provider value={{ ...state, dispatch, login, signup, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  return useContext(AuthContext);
+};*/
+
+
+
+
+
+
 
 
 
@@ -250,6 +338,104 @@ export { AuthContext, AuthProvider };*/
 // };
 
 // export { AuthContext, AuthProvider };
+
+
+
+import React, { createContext, useReducer, useEffect, useContext } from 'react';
+
+const AuthContext = createContext();
+
+const authReducer = (state, action) => {
+  switch (action.type) {
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isAuthenticated: true,
+        token: action.payload.token,
+        userId: action.payload.userId,
+        user: action.payload.user,
+      };
+    case 'LOGOUT':
+      return {
+        ...state,
+        isAuthenticated: false,
+        token: null,
+        userId: null,
+        user: null,
+      };
+    case 'UPDATE_USER':
+      return {
+        ...state,
+        user: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const AuthProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(authReducer, {
+    isAuthenticated: false,
+    token: null,
+    userId: null,
+    user: null,
+  });
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userId = localStorage.getItem('userId');
+    const user = localStorage.getItem('user');
+    if (token && userId && user) {
+      try {
+        const parsedUser = JSON.stringify(user);
+        if (parsedUser) {
+          dispatch({ type: 'LOGIN_SUCCESS', payload: { token, userId, user: parsedUser } });
+        } else {
+          console.error('Error parsing user from localStorage:', user);
+        }
+      } catch (error) {
+        console.error('Error parsing user from localStorage:', error);
+      }
+    }
+  }, []);
+
+  const login = (token, userId, user) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
+    localStorage.setItem('user', JSON.stringify(user));
+    dispatch({ type: 'LOGIN_SUCCESS', payload: { token, userId, user } });
+  };
+
+  const signup = (token, userId, user) => {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
+    localStorage.setItem('user', JSON.stringify(user));
+    dispatch({ type: 'LOGIN_SUCCESS', payload: { token, userId, user } });
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('user');
+    dispatch({ type: 'LOGOUT' });
+  };
+
+  return (
+    <AuthContext.Provider value={{ ...state, dispatch, login, signup, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
+
+
+
+
+
+
 
 
 

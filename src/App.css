@@ -1,6 +1,6 @@
 /* App.css */
 
-.app {
+/*.app {
   display: flex;
   height: 100vh;
   background-color: black;
@@ -13,14 +13,14 @@
   margin-left: 60px;
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
-  overflow-y: auto; /* Ensure content is scrollable if it overflows */
+  overflow-y: auto; 
 }
 
 .main-content.shifted {
   margin-left: 250px;
 }
 
-/* Additional styles for better layout and appearance */
+
 .navbar, .sidebar, .bottom-nav {
   z-index: 1000; 
 }
@@ -42,6 +42,6 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+}*/
 
   

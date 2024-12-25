@@ -1,46 +1,65 @@
+
+
+/* Basic reset for margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
 .navbar {
-  width: 60px;
-  height: 100vh; /* جعل الشريط يغطي الشاشة عمودياً */
-  background-color: black; /* لون الخلفية بنفسجي غامق */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
-  position: fixed;
-  left: 0;
-  top: 0;
-  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-toggle {
-  font-size: 1.5rem;
+  
   color: white;
-  margin-bottom: 20px;
-  cursor: pointer;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.navbar-center {
+
+.nav1 h1{
+  position: absolute;
+  width: 100%;
+  top: 0;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
+
 }
+
+
 
 .animated-title {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: white;
-  writing-mode: vertical-rl; /* يجعل النص عمودياً */
-  transform: rotate(180deg); /* يقلب النص للقراءة بسهولة */
-  animation: fadeInMove 3s ease-in-out infinite;
+  animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes fadeInMove {
-  0%, 100% {
-    opacity: 0.3;
-    transform: translateY(-5px);
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  50% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .animated-title {
+    font-size: 1.5rem;
+  }
+}
+
+

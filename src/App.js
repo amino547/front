@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import AdminDashboard from './components/Admin';
-//import SignIn from './components/SignIn';
+import SignIn1 from './components/SignIn1';
 import Membres from './compo/Members';
 import Trainers from './compo/Trainers';
 import Equipment from './compo/Equipment';
@@ -92,7 +92,7 @@ const MainContent = () => {
       <main className={`main-content ${sidebarOpen ? 'shifted' : ''}`}>
         <Routes>
           {/* Admin Routes */}
-          <Route path="/admin" element={<Signin />} />
+          <Route path="/admin" element={<SignIn1 />} />
           <Route path="/dashboardadmin" element={<AdminDashboard />} />
           <Route path="/members" element={<Membres />} />
           <Route path="/view-trainer" element={<ViewTrainer />} />
@@ -120,8 +120,8 @@ const MainContent = () => {
           <Route path="/user-info" element={<UserInfo />} />
           <Route path="/workout-plans" element={<WorkoutPlans />} />
           <Route path="/exercise-path" element={<ExercisePath />} />
-          <Route path="/user-page" element={<UserPage />} />
-          <Route path="/profile" element={<UserPage />} />
+          <Route path="/user-page" element={ <UserPage />} />
+          <Route path="/profile"  element={isAuthenticated ? <UserPage /> : <Navigate to="/signin" />} />
           <Route
             path="/dashboard"
             element={isAuthenticated ? <DashboardPage /> : <Navigate to="/signin" />}
